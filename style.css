@@ -1,52 +1,100 @@
-body {
+* {
     margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #5b6db3, #e3b7cf);
+}
+
+/* Bikin konten FULL & tengah */
+.wrapper {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    padding: 24px;
 }
 
+/* CARD FULL (besar di HP) */
 .card {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 24px;
+    padding: 36px 28px;
     text-align: center;
-    color: #fff;
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-    animation: fadeIn 1.5s ease;
+    color: #ffffff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    animation: appear 1.2s ease;
 }
 
+/* Emoji */
 .tree {
-    font-size: 64px;
-    animation: glow 1.5s infinite alternate;
+    font-size: 72px;
+    margin-bottom: 12px;
+    animation: glow 1.6s infinite alternate;
 }
 
-h1 {
-    font-size: 42px;
-    margin: 10px 0;
+/* Judul */
+.card h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 
-p {
+/* Teks */
+.card p {
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
+    opacity: 0.95;
 }
 
+/* Footer */
 .footer {
-    display: block;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 13px;
     opacity: 0.8;
 }
 
+/* Animasi */
 @keyframes glow {
-    from { text-shadow: 0 0 5px #fff; }
-    to { text-shadow: 0 0 20px gold; }
+    from {
+        text-shadow: 0 0 6px #ffffff;
+    }
+    to {
+        text-shadow: 0 0 22px gold;
+    }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* EXTRA BESAR di HP kecil */
+@media (max-width: 480px) {
+    .card h1 {
+        font-size: 34px;
+    }
+
+    .card p {
+        font-size: 17px;
+    }
+
+    .tree {
+        font-size: 68px;
+    }
 }
